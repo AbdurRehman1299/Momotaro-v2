@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'profile_picture_screen.dart';
 
-class WelcomePage extends StatefulWidget {
+class WelcomeScreen extends StatefulWidget {
 
   @override
-  _WelcomePageState createState() => _WelcomePageState();
+  _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomePageState extends State<WelcomePage> {
-  void _navigateToRegister() {
+class _WelcomeScreenState extends State<WelcomeScreen> {
+  void _navigateToProfileScreen() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => RegisterPage()),
+      MaterialPageRoute(builder: (context) => ProfilePictureScreen()),
     );
   }
 
@@ -30,7 +31,7 @@ class _WelcomePageState extends State<WelcomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // SizedBox(height: 10,),
+              Spacer(),
               Image.asset('images/main_logo.png', height: 100, fit: BoxFit.contain,),
 
               // SizedBox(height: 25,),
@@ -62,13 +63,14 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
               ),
 
-              Image.asset('images/welcome_image.png', height: 280, fit: BoxFit.contain,),
+              Image.asset('images/welcome_image.png', height: 280, fit: BoxFit.cover,),
+              Spacer(),
 
               SizedBox(
                 width: double.infinity,
                 height: 56,
                 child: ElevatedButton(
-                    onPressed: _navigateToRegister,
+                    onPressed: _navigateToProfileScreen,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFF7265E3),
                       foregroundColor: Colors.white,
@@ -104,6 +106,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   ),
                 ],
               ),
+              Spacer(),
             ],
           ),
         ),

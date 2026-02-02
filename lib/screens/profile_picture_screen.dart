@@ -54,14 +54,60 @@ class _ProfilePictureScreenState extends State<ProfilePictureScreen> {
               ),
 
               SizedBox(height: 30,),
-              Text('Step 1/7', style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5),),
+              Text('STEP 1/7', style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5),),
 
               SizedBox(height: 20,),
               Text('Profile Picture', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 28),),
 
-              SizedBox(height: 60,),
-              Center(
-                child: Image.asset('images/profile_selection.png', height: 130, fit: BoxFit.contain,),
+              SizedBox(height: 80,),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20,),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      width: 80,
+                      height: 80,
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: Colors.grey.shade200),
+                      ),
+                      child: Image.asset('images/profile_selection/monkey.png', fit: BoxFit.contain),
+                    ),
+
+                    Container(
+                      width: 120,
+                      height: 120,
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Color(0xFF8B80F8), // Blue color
+                        borderRadius: BorderRadius.circular(25),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xFF8B80F8).withValues(alpha: 0.3),
+                            blurRadius: 15,
+                            offset: Offset(0, 10),
+                          ),
+                        ],
+                      ),
+                      child: Image.asset('images/profile_selection/ghost_emoji.png', fit: BoxFit.contain),
+                    ),
+
+                    Container(
+                      width: 80,
+                      height: 80,
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: Colors.grey.shade200),
+                      ),
+                      child: Image.asset('images/profile_selection/cat.png', fit: BoxFit.contain),
+                    ),
+                  ],
+                ),
               ),
 
               Spacer(),

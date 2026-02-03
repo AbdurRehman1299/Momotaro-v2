@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'goal_screen.dart';
 
 class InterestScreen extends StatefulWidget {
   @override
@@ -238,7 +239,7 @@ class _InterestScreenState extends State<InterestScreen> {
                     onPressed: () {
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => InterestScreen())
+                          MaterialPageRoute(builder: (context) => GoalScreen())
                       );
                     },
                     style: ElevatedButton.styleFrom(

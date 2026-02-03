@@ -149,8 +149,6 @@ class _ProfilePictureScreenState extends State<ProfilePictureScreen> {
                     child: Text('Continue', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)
                 ),
               ),
-
-              Spacer(),
             ],
           ),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'interest_screen.dart';
 
 class ProfilePictureScreen extends StatefulWidget {
   @override
@@ -38,7 +39,7 @@ class _ProfilePictureScreenState extends State<ProfilePictureScreen> {
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: Color(0xFF6A62B7),
-                                  borderRadius: BorderRadius.circular(10)
+                                  borderRadius: BorderRadius.circular(10),
                                 ),
                               ),
                             ),
@@ -82,7 +83,7 @@ class _ProfilePictureScreenState extends State<ProfilePictureScreen> {
                       height: 120,
                       padding: EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: Color(0xFF8B80F8), // Blue color
+                        color: Color(0xFF8B80F8),
                         borderRadius: BorderRadius.circular(25),
                         boxShadow: [
                           BoxShadow(
@@ -131,7 +132,12 @@ class _ProfilePictureScreenState extends State<ProfilePictureScreen> {
                 width: double.infinity,
                 height: 56,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => InterestScreen())
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFF6A62B7),
                       foregroundColor: Colors.white,

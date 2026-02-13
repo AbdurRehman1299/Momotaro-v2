@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Momotaro V2',
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
     );

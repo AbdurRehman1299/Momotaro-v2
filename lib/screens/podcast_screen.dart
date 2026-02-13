@@ -1,3 +1,4 @@
+import 'package:assignment1/screens/podcast_details_screen.dart';
 import 'package:flutter/material.dart';
 
 class PodcastScreen extends StatefulWidget {
@@ -96,7 +97,12 @@ class _PodcastScreenState extends State<PodcastScreen> {
                           Text("Train your mind for a happier,\nhealthier life", textAlign: TextAlign.center, style: TextStyle(color: Colors.white70, fontSize: 14)),
                           SizedBox(height: 30),
                           ElevatedButton.icon(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => PodcastDetailScreen()),
+                              );
+                            },
                             icon: Icon(Icons.play_arrow, size: 24),
                             label: Text("Let's Start"),
                             style: ElevatedButton.styleFrom(

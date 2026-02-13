@@ -40,7 +40,7 @@ class _GoalScreenState extends State<GoalScreen> {
                                 alignment: Alignment.centerLeft,
 
                                 child: FractionallySizedBox(
-                                  widthFactor: 3 / 7,
+                                  widthFactor: 7 / 11,
                                   child: Container(
                                     decoration: BoxDecoration(
                                       color: Color(0xFF6A62B7),
@@ -56,7 +56,7 @@ class _GoalScreenState extends State<GoalScreen> {
                   ),
 
                   SizedBox(height: 30,),
-                  Text('STEP 3/7', style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5),),
+                  Text('STEP 7/11', style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5),),
 
                   SizedBox(height: 20,),
                   Text('Let us know how we\ncan help you', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 28,), textAlign: TextAlign.center,),

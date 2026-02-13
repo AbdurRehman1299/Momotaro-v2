@@ -50,7 +50,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                         decoration: BoxDecoration(color: Colors.deepPurple[50], borderRadius: BorderRadius.circular(10)),
                         alignment: Alignment.centerLeft,
                         child: FractionallySizedBox(
-                          widthFactor: 2 / 7,
+                          widthFactor: 2 / 11,
                           child: Container(decoration: BoxDecoration(color: Color(0xFF6A62B7), borderRadius: BorderRadius.circular(10))),
                         ),
                       ),
@@ -62,7 +62,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
             ),
 
             SizedBox(height: 40),
-            Text("STEP 2/7", style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5)),
+            Text("STEP 2/11", style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5)),
             SizedBox(height: 15),
             Text("Verify your number", textAlign: TextAlign.center, style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, height: 1.2)),
             SizedBox(height: 10),

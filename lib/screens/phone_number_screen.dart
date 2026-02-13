@@ -51,7 +51,7 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
                         alignment: Alignment.centerLeft,
 
                         child: FractionallySizedBox(
-                          widthFactor: 1 / 7,
+                          widthFactor: 1 / 11,
                           child: Container(decoration: BoxDecoration(color: Color(0xFF6A62B7), borderRadius: BorderRadius.circular(10))),
                         ),
                       ),
@@ -71,7 +71,7 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
             ),
 
             SizedBox(height: 40),
-            Text("STEP 1/7", style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5)),
+            Text("STEP 1/11", style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5)),
             SizedBox(height: 15),
             Text("Let’s start with your\nmobile number", textAlign: TextAlign.center, style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, height: 1.2)),
             SizedBox(height: 10),

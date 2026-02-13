@@ -35,7 +35,7 @@ class _InterestScreenState extends State<InterestScreen> {
                             alignment: Alignment.centerLeft,
 
                             child: FractionallySizedBox(
-                              widthFactor: 2 / 7,
+                              widthFactor: 6 / 11,
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: Color(0xFF6A62B7),
@@ -55,7 +55,7 @@ class _InterestScreenState extends State<InterestScreen> {
               ),
 
               SizedBox(height: 30,),
-              Text('STEP 2/7', style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5),),
+              Text('STEP 6/11', style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5),),
 
               SizedBox(height: 20,),
               Text('Time to customize\nyour interest', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 28,), textAlign: TextAlign.center,),

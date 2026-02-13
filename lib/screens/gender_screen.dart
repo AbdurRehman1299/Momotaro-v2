@@ -38,7 +38,7 @@ class _GenderScreenState extends State<GenderScreen> {
                           alignment: Alignment.centerLeft,
 
                           child: FractionallySizedBox(
-                            widthFactor: 4 / 7,
+                            widthFactor: 8 / 11,
                             child: Container(
                               decoration: BoxDecoration(
                                 color: Color(0xFF6A62B7),
@@ -54,7 +54,7 @@ class _GenderScreenState extends State<GenderScreen> {
                 ),
 
                 SizedBox(height: 30,),
-                Text('STEP 4/7', style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5),),
+                Text('STEP 8/11', style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5),),
 
                 SizedBox(height: 20,),
                 Text('Which one are you?', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 28,), textAlign: TextAlign.center,),

@@ -36,7 +36,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                           decoration: BoxDecoration(color: Colors.deepPurple[50], borderRadius: BorderRadius.circular(10)),
                           alignment: Alignment.centerLeft,
                           child: FractionallySizedBox(
-                            widthFactor: 3 / 7,
+                            widthFactor: 3 / 11,
                             child: Container(decoration: BoxDecoration(color: Color(0xFF6A62B7), borderRadius: BorderRadius.circular(10))),
                           ),
                         ),
@@ -47,7 +47,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                 ),
 
                 SizedBox(height: 40),
-                Text("STEP 3/7", style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5)),
+                Text("STEP 3/11", style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5)),
                 SizedBox(height: 15),
                 Text("Set your password", textAlign: TextAlign.center, style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, height: 1.2)),
 
@@ -58,7 +58,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
-                        BoxShadow(color: Colors.grey.withOpacity(0.1), blurRadius: 15, offset: Offset(0, 5))
+                        BoxShadow(color: Colors.grey.withValues(alpha: 0.1), blurRadius: 15, offset: Offset(0, 5))
                       ],
                       border: Border.all(color: Colors.grey.shade100)
                   ),

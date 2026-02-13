@@ -35,7 +35,7 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
                         alignment: Alignment.centerLeft,
 
                         child: FractionallySizedBox(
-                          widthFactor: 4 / 7,
+                          widthFactor: 4 / 11,
                           child: Container(
                             decoration: BoxDecoration(
                               color: Color(0xFF6A62B7),
@@ -69,7 +69,7 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
               Image.asset('images/fingerprint.png'),
               SizedBox(height: 40),
               Text(
-                'STEP 4/7',
+                'STEP 4/11',
                 style: TextStyle(
                     color: Color(0xFF6A62B7),
                     fontWeight: FontWeight.bold,

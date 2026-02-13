@@ -1,3 +1,4 @@
+import 'package:assignment1/screens/enable_fingerprint_screen.dart';
 import 'package:flutter/material.dart';
 
 class PasswordScreen extends StatefulWidget {
@@ -23,7 +24,10 @@ class _PasswordScreenState extends State<PasswordScreen> {
                 SizedBox(height: 10),
                 Row(
                   children: [
-                    Icon(Icons.arrow_back_ios, size: 20),
+                    IconButton(
+                      icon: Icon(Icons.arrow_back_ios, size: 20),
+                      onPressed: () => Navigator.pop(context),
+                    ),
                     Expanded(
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 40),
@@ -32,7 +36,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                           decoration: BoxDecoration(color: Colors.deepPurple[50], borderRadius: BorderRadius.circular(10)),
                           alignment: Alignment.centerLeft,
                           child: FractionallySizedBox(
-                            widthFactor: 0.6,
+                            widthFactor: 3 / 7,
                             child: Container(decoration: BoxDecoration(color: Color(0xFF6A62B7), borderRadius: BorderRadius.circular(10))),
                           ),
                         ),
@@ -43,7 +47,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                 ),
 
                 SizedBox(height: 40),
-                Text("STEP 1/7", style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5)),
+                Text("STEP 3/7", style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5)),
                 SizedBox(height: 15),
                 Text("Set your password", textAlign: TextAlign.center, style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, height: 1.2)),
 
@@ -170,7 +174,12 @@ class _PasswordScreenState extends State<PasswordScreen> {
                   width: double.infinity,
                   height: 56,
                   child: ElevatedButton(
-                    onPressed: () { print("Continue Clicked: ${_controller.text}"); },
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => FingerprintScreen()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFF6A62B7),
                       foregroundColor: Colors.white,

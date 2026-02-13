@@ -1,12 +1,11 @@
-import 'package:assignment1/screens/profile_picture_screen.dart';
 import 'package:flutter/material.dart';
 
-class FingerprintScreen extends StatefulWidget {
+class NotificationScreen extends StatefulWidget {
   @override
-  _FingerprintScreenState createState() => _FingerprintScreenState();
+  _NotificationScreenState createState() => _NotificationScreenState();
 }
 
-class _FingerprintScreenState extends State<FingerprintScreen> {
+class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,9 +32,8 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         alignment: Alignment.centerLeft,
-
                         child: FractionallySizedBox(
-                          widthFactor: 4 / 7,
+                          widthFactor: 10 / 11,
                           child: Container(
                             decoration: BoxDecoration(
                               color: Color(0xFF6A62B7),
@@ -47,12 +45,7 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ProfilePictureScreen()),
-                      );
-                    },
+                    onPressed: () {},
                     child: Text(
                       'Skip',
                       style: TextStyle(
@@ -65,11 +58,9 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
                 ],
               ),
 
-              SizedBox(height: 40),
-              Image.asset('images/fingerprint.png'),
-              SizedBox(height: 40),
+              SizedBox(height: 20),
               Text(
-                'STEP 4/7',
+                'STEP 10/11',
                 style: TextStyle(
                     color: Color(0xFF6A62B7),
                     fontWeight: FontWeight.bold,
@@ -78,29 +69,80 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
                 ),
               ),
 
-              SizedBox(height: 20),
+              SizedBox(height: 15),
+
               Text(
-                'Enable Fingerprint',
+                'Do you want to turn\non notification?',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
-                    fontSize: 26,
+                    fontSize: 24,
+                    height: 1.2
                 ),
               ),
 
-              SizedBox(height: 20),
+              SizedBox(height: 30),
+              Image.asset('images/notification.png'),
 
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Text(
-                  'If you enable touch ID, you don\'t need to enter your password when you login.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.grey,
-                      height: 1.5,
-                      fontSize: 15
+              SizedBox(height: 40),
+              Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        boxShadow: [BoxShadow(color: Colors.grey.withValues(alpha: 0.1), blurRadius: 5)]
+                    ),
+                    child: Icon(Icons.auto_awesome, color: Color(0xFF6A62B7), size: 20),
                   ),
-                ),
+                  SizedBox(width: 15),
+                  Text(
+                    "New weekly healthy reminder",
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: Colors.black87),
+                  )
+                ],
+              ),
+
+              SizedBox(height: 20),
+              Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        boxShadow: [BoxShadow(color: Colors.grey.withValues(alpha: 0.1), blurRadius: 5)]
+                    ),
+                    child: Icon(Icons.local_fire_department, color: Color(0xFF6A62B7), size: 20),
+                  ),
+                  SizedBox(width: 15),
+                  Text(
+                    "Motivational reminder",
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: Colors.black87),
+                  )
+                ],
+              ),
+
+              SizedBox(height: 20),
+              Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        boxShadow: [BoxShadow(color: Colors.grey.withValues(alpha: 0.1), blurRadius: 5)]
+                    ),
+                    child: Icon(Icons.monitor_heart, color: Color(0xFF6A62B7), size: 20),
+                  ),
+                  SizedBox(width: 15),
+                  Text(
+                    "Personalised program",
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: Colors.black87),
+                  )
+                ],
               ),
 
               Spacer(),
@@ -118,12 +160,11 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
                       elevation: 0,
                     ),
                     child: Text(
-                      'Activate',
+                      'Allow',
                       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     )
                 ),
               ),
-
               SizedBox(height: 20),
             ],
           ),

@@ -1,3 +1,4 @@
+import 'package:assignment1/screens/notification_enable_screen.dart';
 import 'package:flutter/material.dart';
 
 class FitnessLevelScreen extends StatefulWidget {
@@ -102,7 +103,12 @@ class _FitnessLevelScreenState extends State<FitnessLevelScreen>{
                           width: double.infinity,
                           height: 56,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => NotificationScreen()),
+                              );
+                            },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Color(0xFF6A62B7),
                               foregroundColor: Colors.white,

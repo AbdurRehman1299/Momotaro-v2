@@ -63,7 +63,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
               ),
 
-              Image.asset('images/welcome_image.png', height: 280, fit: BoxFit.cover,),
+              Spacer(),
+              SizedBox(
+                height: 300,
+                child: Image.asset(
+                  'images/welcome_image.png',
+                  fit: BoxFit.contain,
+                ),
+              ),
               Spacer(),
 
               SizedBox(

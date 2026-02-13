@@ -1,3 +1,4 @@
+import 'package:assignment1/screens/success_screen.dart';
 import 'package:flutter/material.dart';
 
 class WeightScreen extends StatefulWidget {
@@ -51,7 +52,12 @@ class _WeightScreenState extends State<WeightScreen> {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SuccessScreen()),
+                        );
+                      },
                       child: Text(
                         'Next',
                         style: TextStyle(
@@ -189,7 +195,12 @@ class _WeightScreenState extends State<WeightScreen> {
                   width: double.infinity,
                   height: 56,
                   child: ElevatedButton(
-                    onPressed: () { print("Weight Selected: ${_weightController.text}"); },
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SuccessScreen()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFF6A62B7),
                       foregroundColor: Colors.white,

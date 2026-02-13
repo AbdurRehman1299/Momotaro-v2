@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'profile_picture_screen.dart';
+import 'phone_number_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
 
@@ -8,10 +8,10 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
-  void _navigateToProfileScreen() {
+  void _navigateToPhoneNumberScreen() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ProfilePictureScreen()),
+      MaterialPageRoute(builder: (context) => PhoneNumberScreen()),
     );
   }
 
@@ -70,7 +70,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 width: double.infinity,
                 height: 56,
                 child: ElevatedButton(
-                    onPressed: _navigateToProfileScreen,
+                    onPressed: _navigateToPhoneNumberScreen,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFF7265E3),
                       foregroundColor: Colors.white,

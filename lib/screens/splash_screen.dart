@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
               fit: BoxFit.contain,
             ),
             // SizedBox(height: 30,),
-            Text("Momotaro UI Kit", style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.black87),),
+            Text("Momotaro UI Kit", style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Color(0xFF6A62B7)),),
           ],
         ),
       ),

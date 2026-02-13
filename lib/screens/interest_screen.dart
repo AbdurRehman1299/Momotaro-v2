@@ -220,7 +220,7 @@ class _InterestScreenState extends State<InterestScreen> {
                               borderRadius: BorderRadius.circular(20),
                               border: null,
                             ),
-                            child: Center(child: Image.asset("images/interest_selection/Vegan.png", width: 40, height: 40)),
+                            child: Center(child: Image.asset("images/interest_selection/vegan.png", width: 40, height: 40)),
                           ),
                         ),
                         SizedBox(height: 8),

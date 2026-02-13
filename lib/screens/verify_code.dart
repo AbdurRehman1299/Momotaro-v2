@@ -1,3 +1,4 @@
+import 'package:assignment1/screens/set_password_screen.dart';
 import 'package:flutter/material.dart';
 
 class VerificationScreen extends StatefulWidget {
@@ -123,7 +124,12 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 width: double.infinity,
                 height: 56,
                 child: ElevatedButton(
-                  onPressed: () { print("Verify: $otpCode"); },
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PasswordScreen()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF6A62B7),
                     foregroundColor: Colors.white,

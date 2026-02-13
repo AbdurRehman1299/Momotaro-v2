@@ -1,3 +1,4 @@
+import 'fitness_level_screen.dart';
 import 'package:flutter/material.dart';
 
 class GenderScreen extends StatefulWidget {
@@ -130,10 +131,10 @@ class _GenderScreenState extends State<GenderScreen> {
                   height: 56,
                   child: ElevatedButton(
                       onPressed: () {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(builder: (context) => GenderScreen())
-                        // );
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => FitnessLevelScreen())
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xFF6A62B7),

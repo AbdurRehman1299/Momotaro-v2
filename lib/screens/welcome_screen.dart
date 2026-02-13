@@ -122,16 +122,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   }
 }
 
-class RegisterPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Register'), backgroundColor: Color(0xFF9B9AD4), foregroundColor: Colors.white,),
-      body: Center(child: Text('Register Screen PlaceHolder'),),
-    );
-  }
-}
-
 class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

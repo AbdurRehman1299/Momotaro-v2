@@ -1,26 +1,26 @@
-import 'package:assignment1/screens/verify_code.dart';
 import 'package:flutter/material.dart';
 
-class PhoneNumberScreen extends StatefulWidget {
+class VerificationScreen extends StatefulWidget {
   @override
-  _PhoneNumberScreenState createState() => _PhoneNumberScreenState();
+  _VerificationScreenState createState() => _VerificationScreenState();
 }
 
-class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
-  final TextEditingController _controller = TextEditingController();
+class _VerificationScreenState extends State<VerificationScreen> {
+  String otpCode = "";
 
-  // Logic to add number
+  // Logic to update state
   void _onNumberPress(String value) {
-    setState(() {
-      _controller.text += value;
-    });
+    if (otpCode.length < 4) {
+      setState(() {
+        otpCode += value;
+      });
+    }
   }
 
-  // Logic to delete last number
   void _onBackspacePress() {
-    if (_controller.text.isNotEmpty) {
+    if (otpCode.isNotEmpty) {
       setState(() {
-        _controller.text = _controller.text.substring(0, _controller.text.length - 1);
+        otpCode = otpCode.substring(0, otpCode.length - 1);
       });
     }
   }
@@ -34,9 +34,8 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
           children: [
             SizedBox(height: 10),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24),
+              padding: EdgeInsets.symmetric(horizontal: 24.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
                     icon: Icon(Icons.arrow_back_ios, size: 20),
@@ -44,90 +43,77 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
                   ),
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.symmetric(horizontal: 40),
                       child: Container(
                         height: 6,
                         decoration: BoxDecoration(color: Colors.deepPurple[50], borderRadius: BorderRadius.circular(10)),
                         alignment: Alignment.centerLeft,
-
                         child: FractionallySizedBox(
-                          widthFactor: 1 / 7,
+                          widthFactor: 2 / 7,
                           child: Container(decoration: BoxDecoration(color: Color(0xFF6A62B7), borderRadius: BorderRadius.circular(10))),
                         ),
                       ),
                     ),
                   ),
-                  TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => VerificationScreen())
-                        );
-                      },
-                      child: Text("Next", style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 16))
-                  )
+                  SizedBox(width: 20),
                 ],
               ),
             ),
 
             SizedBox(height: 40),
-            Text("STEP 1/7", style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5)),
+            Text("STEP 2/7", style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.bold, fontSize: 14, letterSpacing: 1.5)),
             SizedBox(height: 15),
-            Text("Let’s start with your\nmobile number", textAlign: TextAlign.center, style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, height: 1.2)),
+            Text("Verify your number", textAlign: TextAlign.center, style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, height: 1.2)),
             SizedBox(height: 10),
-            Text("Number we can use to reach you", style: TextStyle(color: Colors.grey[500], fontSize: 14)),
+            Text("We'll text you on 08223780727.", style: TextStyle(color: Colors.grey[600], fontSize: 14)),
+
+            SizedBox(height: 50),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // Circle 1
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  width: 30, height: 40,
+                  alignment: Alignment.center,
+                  child: otpCode.isNotEmpty
+                      ? Text(otpCode[0], style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.black87))
+                      : Container(width: 16, height: 16, decoration: BoxDecoration(color: Colors.deepPurple[50], shape: BoxShape.circle)),
+                ),
+                // Circle 2
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  width: 30, height: 40,
+                  alignment: Alignment.center,
+                  child: otpCode.length > 1
+                      ? Text(otpCode[1], style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.black87))
+                      : Container(width: 16, height: 16, decoration: BoxDecoration(color: Colors.deepPurple[50], shape: BoxShape.circle)),
+                ),
+                // Circle 3
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  width: 30, height: 40,
+                  alignment: Alignment.center,
+                  child: otpCode.length > 2
+                      ? Text(otpCode[2], style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.black87))
+                      : Container(width: 16, height: 16, decoration: BoxDecoration(color: Colors.deepPurple[50], shape: BoxShape.circle)),
+                ),
+                // Circle 4
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  width: 30, height: 40,
+                  alignment: Alignment.center,
+                  child: otpCode.length > 3
+                      ? Text(otpCode[3], style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.black87))
+                      : Container(width: 16, height: 16, decoration: BoxDecoration(color: Colors.deepPurple[50], shape: BoxShape.circle)),
+                ),
+              ],
+            ),
 
             SizedBox(height: 40),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.0),
-              child: Container(
-                height: 60,
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
-                      BoxShadow(color: Colors.grey.withValues(alpha: 0.1), blurRadius: 15, offset: Offset(0, 5))
-                    ],
-                    border: Border.all(color: Colors.grey.shade100)
-                ),
-                child: Row(
-                  children: [
-                    // Flag
-                    Container(
-                      width: 24, height: 16,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(2),
-                          gradient: LinearGradient(
-                              begin: Alignment.topCenter, end: Alignment.bottomCenter,
-                              stops: [0.5, 0.5],
-                              colors: [Colors.red, Colors.white]
-                          )
-                      ),
-                    ),
-                    SizedBox(width: 8),
-                    Text("+62", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black87)),
-                    Icon(Icons.arrow_drop_down, color: Colors.grey),
-
-                    SizedBox(width: 15),
-
-                    // The Actual Input Field
-                    Expanded(
-                      child: TextField(
-                        controller: _controller,
-                        readOnly: true,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black87),
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: "Enter number",
-                          hintStyle: TextStyle(color: Colors.grey),
-                          contentPadding: EdgeInsets.zero,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+            GestureDetector(
+              onTap: () {},
+              child: Text("Send me a new code", style: TextStyle(color: Color(0xFF6A62B7), fontWeight: FontWeight.w600, fontSize: 14)),
             ),
 
             SizedBox(height: 30),
@@ -137,16 +123,14 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
                 width: double.infinity,
                 height: 56,
                 child: ElevatedButton(
-                  onPressed: () {
-                    print("Verify: ${_controller.text}");
-                  },
+                  onPressed: () { print("Verify: $otpCode"); },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF6A62B7),
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                     elevation: 0,
                   ),
-                  child: Text("Verify Now", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  child: Text("Continue", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 ),
               ),
             ),
@@ -157,11 +141,11 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
               padding: EdgeInsets.symmetric(vertical: 20),
               child: Column(
                 children: [
-                  // --- ROW 1 (1, 2, 3) ---
+                  // --- ROW 1 ---
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      // BUTTON 1
+                      // Key 1
                       Container(
                         width: 110, height: 50,
                         decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8), boxShadow: [BoxShadow(color: Colors.grey.withValues(alpha: 0.05), blurRadius: 1, offset: Offset(0, 1))]),
@@ -174,7 +158,7 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
                           ),
                         ),
                       ),
-                      // BUTTON 2
+                      // Key 2
                       Container(
                         width: 110, height: 50,
                         decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8), boxShadow: [BoxShadow(color: Colors.grey.withValues(alpha: 0.05), blurRadius: 1, offset: Offset(0, 1))]),
@@ -187,7 +171,7 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
                           ),
                         ),
                       ),
-                      // BUTTON 3
+                      // Key 3
                       Container(
                         width: 110, height: 50,
                         decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8), boxShadow: [BoxShadow(color: Colors.grey.withValues(alpha: 0.05), blurRadius: 1, offset: Offset(0, 1))]),
@@ -204,11 +188,11 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
                   ),
                   SizedBox(height: 10),
 
-                  // --- ROW 2 (4, 5, 6) ---
+                  // --- ROW 2 ---
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      // BUTTON 4
+                      // Key 4
                       Container(
                         width: 110, height: 50,
                         decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8), boxShadow: [BoxShadow(color: Colors.grey.withValues(alpha: 0.05), blurRadius: 1, offset: Offset(0, 1))]),
@@ -221,7 +205,7 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
                           ),
                         ),
                       ),
-                      // BUTTON 5
+                      // Key 5
                       Container(
                         width: 110, height: 50,
                         decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8), boxShadow: [BoxShadow(color: Colors.grey.withValues(alpha: 0.05), blurRadius: 1, offset: Offset(0, 1))]),
@@ -234,7 +218,7 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
                           ),
                         ),
                       ),
-                      // BUTTON 6
+                      // Key 6
                       Container(
                         width: 110, height: 50,
                         decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8), boxShadow: [BoxShadow(color: Colors.grey.withValues(alpha: 0.05), blurRadius: 1, offset: Offset(0, 1))]),
@@ -251,11 +235,11 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
                   ),
                   SizedBox(height: 10),
 
-                  // --- ROW 3 (7, 8, 9) ---
+                  // --- ROW 3 ---
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      // BUTTON 7
+                      // Key 7
                       Container(
                         width: 110, height: 50,
                         decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8), boxShadow: [BoxShadow(color: Colors.grey.withValues(alpha: 0.05), blurRadius: 1, offset: Offset(0, 1))]),
@@ -268,7 +252,7 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
                           ),
                         ),
                       ),
-                      // BUTTON 8
+                      // Key 8
                       Container(
                         width: 110, height: 50,
                         decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8), boxShadow: [BoxShadow(color: Colors.grey.withValues(alpha: 0.05), blurRadius: 1, offset: Offset(0, 1))]),
@@ -281,7 +265,7 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
                           ),
                         ),
                       ),
-                      // BUTTON 9
+                      // Key 9
                       Container(
                         width: 110, height: 50,
                         decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8), boxShadow: [BoxShadow(color: Colors.grey.withValues(alpha: 0.05), blurRadius: 1, offset: Offset(0, 1))]),
@@ -298,13 +282,12 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
                   ),
                   SizedBox(height: 10),
 
-                  // --- ROW 4 (0, Backspace) ---
+                  // --- ROW 4 ---
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      SizedBox(width: 110), // Empty Space
-
-                      // BUTTON 0
+                      SizedBox(width: 110),
+                      // Key 0
                       Container(
                         width: 110, height: 50,
                         decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8), boxShadow: [BoxShadow(color: Colors.grey.withValues(alpha: 0.05), blurRadius: 1, offset: Offset(0, 1))]),
@@ -317,8 +300,7 @@ class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
                           ),
                         ),
                       ),
-
-                      // BUTTON BACKSPACE
+                      // Backspace
                       Container(
                         width: 110, height: 50,
                         alignment: Alignment.center,

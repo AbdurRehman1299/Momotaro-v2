@@ -1,3 +1,4 @@
+import 'package:assignment1/screens/weight_measure_screen.dart';
 import 'package:flutter/material.dart';
 
 class NotificationScreen extends StatefulWidget {
@@ -45,7 +46,12 @@ class _NotificationScreenState extends State<NotificationScreen> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => WeightScreen()),
+                      );
+                    },
                     child: Text(
                       'Skip',
                       style: TextStyle(

@@ -1,4 +1,4 @@
-import 'package:assignment1/screens/podcast_screen.dart';
+import 'package:assignment1/components/custom_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
 class SuccessScreen extends StatefulWidget {
@@ -83,7 +83,9 @@ class _SuccessScreenState extends State<SuccessScreen> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => PodcastScreen()),
+                          MaterialPageRoute(
+                            builder: (context) => CustomBottomNavigation(),
+                          ),
                         );
                       },
                       style: ElevatedButton.styleFrom(
@@ -97,8 +99,8 @@ class _SuccessScreenState extends State<SuccessScreen> {
                       child: Text(
                         "Get Started!",
                         style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),

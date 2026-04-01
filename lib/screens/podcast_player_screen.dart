@@ -1,3 +1,4 @@
+import 'package:assignment1/screens/share_playlist_screen.dart';
 import 'package:flutter/material.dart';
 
 class PodcastPlayerScreen extends StatefulWidget {
@@ -13,6 +14,17 @@ class _PodcastPlayerScreenState extends State<PodcastPlayerScreen> {
   final Color cyanProgress = const Color(0xFF6DF2F2);
 
   bool isPlaying = true;
+
+  void _openShare(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return const SharePlaylistScreen();
+      },
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,10 +73,13 @@ class _PodcastPlayerScreenState extends State<PodcastPlayerScreen> {
                             size: 36,
                           ),
                         ),
-                        const Icon(
-                          Icons.more_horiz,
-                          color: Colors.white,
-                          size: 32,
+                        GestureDetector(
+                          onTap: () => _openShare(context),
+                          child: const Icon(
+                            Icons.more_horiz,
+                            color: Colors.white,
+                            size: 32,
+                          ),
                         ),
                       ],
                     ),

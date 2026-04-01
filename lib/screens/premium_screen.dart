@@ -11,11 +11,11 @@ class _PremiumScreenState extends State<PremiumScreen> {
   // State to track selected plan
   int selectedPlanIndex = 0;
 
-  final Color premiumCardColor = Color(0xFF9F7DFF);
-  final Color badgeColor = Color(0xFF99A9FF);
-
   @override
   Widget build(BuildContext context) {
+    final Color premiumCardColor = Color(0xFF9F7DFF);
+    final Color badgeColor = Color(0xFF99A9FF);
+
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Container(

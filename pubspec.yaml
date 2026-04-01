@@ -63,6 +63,7 @@ flutter:
     - images/profile_selection/
     - images/interest_selection/
     - images/gender_selection/
+    - images/events/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

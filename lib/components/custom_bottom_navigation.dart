@@ -1,3 +1,4 @@
+import 'package:assignment1/screens/events_screen.dart';
 import 'package:assignment1/screens/explore_screen.dart';
 import 'package:assignment1/screens/podcast_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,11 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
 
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [PodcastScreen(), ExploreScreen()];
+  final List<Widget> _pages = [
+    PodcastScreen(),
+    EventsScreen(),
+    ExploreScreen(),
+  ];
 
   void _onTabTapped(int index) {
     setState(() {

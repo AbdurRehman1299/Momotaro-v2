@@ -1,3 +1,4 @@
+import 'package:assignment1/screens/event_details_screen.dart';
 import 'package:flutter/material.dart';
 
 class EventsScreen extends StatefulWidget {
@@ -10,11 +11,6 @@ class EventsScreen extends StatefulWidget {
 class _EventsScreenState extends State<EventsScreen> {
   @override
   Widget build(BuildContext context) {
-    const primaryPurple = Color(0xFF8B7BFE);
-    const lightPurple = Color(0xFFE8E5FF);
-    const darkText = Color(0xFF2D3142);
-    const greyText = Color(0xFF9DA3B4);
-    const blueAccent = Color(0xFF1DA1F2);
     return Scaffold(
       backgroundColor: const Color(0xFFF8F9FA),
       body: SafeArea(
@@ -26,7 +22,6 @@ class _EventsScreenState extends State<EventsScreen> {
               children: [
                 const SizedBox(height: 20),
 
-                // Top Bar
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -37,16 +32,17 @@ class _EventsScreenState extends State<EventsScreen> {
                       child: const Icon(
                         Icons.arrow_back_ios,
                         size: 20,
-                        color: darkText,
+                        color: Color(0xFF2D3142),
                       ),
                     ),
                     const Icon(
                       Icons.calendar_today_outlined,
                       size: 24,
-                      color: primaryPurple,
+                      color: Color(0xFF8B7BFE),
                     ),
                   ],
                 ),
+
                 const SizedBox(height: 20),
 
                 // Title
@@ -55,12 +51,12 @@ class _EventsScreenState extends State<EventsScreen> {
                   style: TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
-                    color: darkText,
+                    color: Color(0xFF2D3142),
                   ),
                 ),
+
                 const SizedBox(height: 24),
 
-                // Date Selector Strip
                 SizedBox(
                   height: 80,
                   child: ListView(
@@ -82,9 +78,9 @@ class _EventsScreenState extends State<EventsScreen> {
                     ],
                   ),
                 ),
+
                 const SizedBox(height: 30),
 
-                // Main Event Card
                 Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -100,7 +96,6 @@ class _EventsScreenState extends State<EventsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Event Image with Heart Button
                       Stack(
                         children: [
                           ClipRRect(
@@ -108,7 +103,7 @@ class _EventsScreenState extends State<EventsScreen> {
                               top: Radius.circular(24),
                             ),
                             child: Image.asset(
-                              'images/events/badminton.png', // Placeholder for badminton asset
+                              'images/events/badminton.png',
                               height: 160,
                               width: double.infinity,
                               fit: BoxFit.cover,
@@ -137,7 +132,7 @@ class _EventsScreenState extends State<EventsScreen> {
                               ),
                               child: const Icon(
                                 Icons.favorite,
-                                color: primaryPurple,
+                                color: Color(0xFF8B7BFE),
                                 size: 20,
                               ),
                             ),
@@ -154,37 +149,40 @@ class _EventsScreenState extends State<EventsScreen> {
                             const Text(
                               "EVENTS",
                               style: TextStyle(
-                                color: primaryPurple,
+                                color: Color(0xFF8B7BFE),
                                 fontSize: 10,
                                 fontWeight: FontWeight.bold,
                                 letterSpacing: 1.5,
                               ),
                             ),
+
                             const SizedBox(height: 8),
+
                             const Text(
                               "National health movement",
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
-                                color: darkText,
+                                color: Color(0xFF2D3142),
                               ),
                             ),
+
                             const SizedBox(height: 8),
+
                             const Text(
                               "Challenge your friends by taking the\nmost steps on Saturday and Sunday!",
                               style: TextStyle(
-                                color: greyText,
+                                color: Color(0xFF9DA3B4),
                                 fontSize: 13,
                                 height: 1.5,
                               ),
                             ),
+
                             const SizedBox(height: 20),
 
-                            // Avatars & Join Button Row
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                // Stacked Avatars
                                 Row(
                                   children: [
                                     _buildStackedAvatar(
@@ -202,7 +200,7 @@ class _EventsScreenState extends State<EventsScreen> {
                                         width: 32,
                                         height: 32,
                                         decoration: const BoxDecoration(
-                                          color: primaryPurple,
+                                          color: Color(0xFF8B7BFE),
                                           shape: BoxShape.circle,
                                         ),
                                         child: const Center(
@@ -219,12 +217,19 @@ class _EventsScreenState extends State<EventsScreen> {
                                     ),
                                   ],
                                 ),
-                                // Join Button
+
                                 ElevatedButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (_) => EventDetailsScreen(),
+                                      ),
+                                    );
+                                  },
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: lightPurple,
-                                    foregroundColor: primaryPurple,
+                                    backgroundColor: Color(0xFFE8E5FF),
+                                    foregroundColor: Color(0xFF8B7BFE),
                                     elevation: 0,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(12),
@@ -249,9 +254,9 @@ class _EventsScreenState extends State<EventsScreen> {
                     ],
                   ),
                 ),
+
                 const SizedBox(height: 30),
 
-                // Nearby Events Card
                 Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -267,7 +272,6 @@ class _EventsScreenState extends State<EventsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Header
                       const Padding(
                         padding: EdgeInsets.all(20.0),
                         child: Column(
@@ -278,7 +282,7 @@ class _EventsScreenState extends State<EventsScreen> {
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
-                                color: darkText,
+                                color: Color(0xFF2D3142),
                               ),
                             ),
                             SizedBox(height: 8),
@@ -287,13 +291,13 @@ class _EventsScreenState extends State<EventsScreen> {
                                 Icon(
                                   Icons.location_on,
                                   size: 14,
-                                  color: greyText,
+                                  color: Color(0xFF9DA3B4),
                                 ),
                                 SizedBox(width: 4),
                                 Text(
                                   "110 The Embarcadero, San Francisco",
                                   style: TextStyle(
-                                    color: greyText,
+                                    color: Color(0xFF9DA3B4),
                                     fontSize: 12,
                                   ),
                                 ),
@@ -303,30 +307,25 @@ class _EventsScreenState extends State<EventsScreen> {
                         ),
                       ),
 
-                      // Map Area
                       ClipRRect(
                         borderRadius: const BorderRadius.vertical(
                           bottom: Radius.circular(24),
                         ),
                         child: Container(
-                          height:
-                              300, // Provides enough space for map and floating cards
+                          height: 300,
                           width: double.infinity,
                           decoration: BoxDecoration(
                             image: DecorationImage(
                               image: const AssetImage(
                                 'images/events/map_bg.png',
-                              ), // Map background placeholder
+                              ),
                               fit: BoxFit.cover,
                               onError: (e, s) => {},
                             ),
-                            color: const Color(
-                              0xFFE2E8F0,
-                            ), // Fallback map color
+                            color: const Color(0xFFE2E8F0),
                           ),
                           child: Stack(
                             children: [
-                              // Floating Event List at the bottom of the map
                               Positioned(
                                 bottom: 20,
                                 left: 20,
@@ -338,7 +337,7 @@ class _EventsScreenState extends State<EventsScreen> {
                                       "13",
                                       "Open Water Swim",
                                       "Free Event",
-                                      blueAccent,
+                                      Color(0xFF1DA1F2),
                                     ),
                                     const SizedBox(height: 12),
                                     _buildMapEventCard(
@@ -346,7 +345,7 @@ class _EventsScreenState extends State<EventsScreen> {
                                       "24",
                                       "Marathon 2020",
                                       "Paid Event",
-                                      blueAccent,
+                                      Color(0xFF1DA1F2),
                                     ),
                                   ],
                                 ),
@@ -359,9 +358,7 @@ class _EventsScreenState extends State<EventsScreen> {
                   ),
                 ),
 
-                const SizedBox(
-                  height: 100,
-                ), // Padding to avoid being blocked by the Bottom Navigation Bar
+                const SizedBox(height: 100),
               ],
             ),
           ),
@@ -370,9 +367,6 @@ class _EventsScreenState extends State<EventsScreen> {
     );
   }
 
-  // --- Helper Widgets ---
-
-  // Custom widget for the horizontally scrolling date picker
   Widget _buildDateItem({
     required String day,
     required String date,
@@ -413,7 +407,6 @@ class _EventsScreenState extends State<EventsScreen> {
             ),
           ),
           const SizedBox(height: 4),
-          // Small dot to indicate an event on that day
           if (hasEvent && !isSelected)
             Container(
               width: 4,
@@ -430,7 +423,6 @@ class _EventsScreenState extends State<EventsScreen> {
     );
   }
 
-  // Helper widget to stack avatars overlapping each other
   Widget _buildStackedAvatar(String imagePath) {
     return Container(
       width: 32,
@@ -446,7 +438,6 @@ class _EventsScreenState extends State<EventsScreen> {
     );
   }
 
-  // Helper widget for the floating event cards inside the map area
   Widget _buildMapEventCard(
     String month,
     String day,

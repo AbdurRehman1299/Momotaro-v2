@@ -2,6 +2,7 @@ import 'package:assignment1/screens/challenge_screen.dart';
 import 'package:assignment1/screens/events_screen.dart';
 import 'package:assignment1/screens/explore_screen.dart';
 import 'package:assignment1/screens/podcast_screen.dart';
+import 'package:assignment1/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class CustomBottomNavigation extends StatefulWidget {
@@ -21,6 +22,7 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
     PodcastScreen(),
     EventsScreen(),
     ExploreScreen(),
+    ProfileScreen(),
   ];
 
   void _onTabTapped(int index) {

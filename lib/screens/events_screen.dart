@@ -35,10 +35,13 @@ class _EventsScreenState extends State<EventsScreen> {
                         color: Color(0xFF2D3142),
                       ),
                     ),
-                    const Icon(
-                      Icons.calendar_today_outlined,
-                      size: 24,
-                      color: Color(0xFF8B7BFE),
+                    GestureDetector(
+                      onTap: () {},
+                      child: const Icon(
+                        Icons.calendar_today_outlined,
+                        size: 24,
+                        color: Color(0xFF8B7BFE),
+                      ),
                     ),
                   ],
                 ),

@@ -2,8 +2,10 @@ import 'package:assignment1/screens/podcast_details_screen.dart';
 import 'package:flutter/material.dart';
 
 class PodcastScreen extends StatefulWidget {
+  const PodcastScreen({super.key});
+
   @override
-  _PodcastScreenState createState() => _PodcastScreenState();
+  State<PodcastScreen> createState() => _PodcastScreenState();
 }
 
 class _PodcastScreenState extends State<PodcastScreen> {

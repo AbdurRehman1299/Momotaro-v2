@@ -1,3 +1,4 @@
+import 'package:assignment1/screens/challenge_screen.dart';
 import 'package:assignment1/screens/events_screen.dart';
 import 'package:assignment1/screens/explore_screen.dart';
 import 'package:assignment1/screens/podcast_screen.dart';
@@ -37,8 +38,10 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Add your action for the '+' button here
-          print("FAB Clicked!");
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => ChallengeScreen()),
+          );
         },
         backgroundColor: const Color(0xFF6A62B7),
         elevation: 4,

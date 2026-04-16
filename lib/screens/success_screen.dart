@@ -1,12 +1,9 @@
 import 'package:assignment1/components/custom_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
-class SuccessScreen extends StatefulWidget {
-  @override
-  _SuccessScreenState createState() => _SuccessScreenState();
-}
+class SuccessScreen extends StatelessWidget {
+  const SuccessScreen({super.key});
 
-class _SuccessScreenState extends State<SuccessScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

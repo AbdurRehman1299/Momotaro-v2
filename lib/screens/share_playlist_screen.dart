@@ -10,15 +10,8 @@ class SharePlaylistScreen extends StatefulWidget {
 class _SharePlaylistScreenState extends State<SharePlaylistScreen> {
   @override
   Widget build(BuildContext context) {
-    // Define brand colors for the social buttons
-    final Color messageColor = const Color(0xFF8B7BFE);
-    final Color whatsappColor = const Color(0xFF25D366);
-    final Color facebookColor = const Color(0xFF1877F2);
-    final Color twitterColor = const Color(0xFF1DA1F2);
-    final Color primaryPurple = const Color(0xFF8B7BFE);
-
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F9FA), // Light grey background
+      backgroundColor: const Color(0xFFF8F9FA),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -28,7 +21,6 @@ class _SharePlaylistScreenState extends State<SharePlaylistScreen> {
               children: [
                 const SizedBox(height: 20),
 
-                // --- 1. Top Bar ---
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -40,13 +32,12 @@ class _SharePlaylistScreenState extends State<SharePlaylistScreen> {
                         color: Colors.black87,
                       ),
                     ),
-                    Icon(Icons.download, size: 28, color: primaryPurple),
+                    Icon(Icons.download, size: 28, color: Color(0xFF8B7BFE)),
                   ],
                 ),
 
                 const SizedBox(height: 20),
 
-                // --- 2. Title ---
                 const Text(
                   "Let's share",
                   style: TextStyle(
@@ -58,7 +49,6 @@ class _SharePlaylistScreenState extends State<SharePlaylistScreen> {
 
                 const SizedBox(height: 30),
 
-                // The Main Card
                 Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -75,10 +65,8 @@ class _SharePlaylistScreenState extends State<SharePlaylistScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Top Section: Illustration & Scalloped Edge
                       Stack(
                         children: [
-                          // Top Blue/Purple Illustration Area
                           Container(
                             height: 160,
                             decoration: const BoxDecoration(
@@ -87,10 +75,10 @@ class _SharePlaylistScreenState extends State<SharePlaylistScreen> {
                                 top: Radius.circular(24),
                               ),
                             ),
-                            // Placeholder for the illustration
+
                             child: Center(
                               child: Image.asset(
-                                'images/share_illustration.png', // Add your asset here
+                                'images/share_illustration.png',
                                 fit: BoxFit.contain,
                                 errorBuilder: (context, error, stackTrace) =>
                                     const Icon(
@@ -102,16 +90,14 @@ class _SharePlaylistScreenState extends State<SharePlaylistScreen> {
                             ),
                           ),
 
-                          // The Scalloped (Wavy) Edge Trick
                           Positioned(
-                            bottom:
-                                -1, // Align perfectly to the bottom of the blue container
+                            bottom: -1,
                             left: 0,
                             right: 0,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: List.generate(
-                                20, // Number of "bumps"
+                                20,
                                 (index) => Container(
                                   width: 16,
                                   height: 16,
@@ -126,7 +112,6 @@ class _SharePlaylistScreenState extends State<SharePlaylistScreen> {
                         ],
                       ),
 
-                      // Bottom Section: Playlist Info
                       Padding(
                         padding: const EdgeInsets.all(24.0),
                         child: Column(
@@ -136,7 +121,6 @@ class _SharePlaylistScreenState extends State<SharePlaylistScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                // Title and Subtitle
                                 const Expanded(
                                   child: Column(
                                     crossAxisAlignment:
@@ -164,16 +148,15 @@ class _SharePlaylistScreenState extends State<SharePlaylistScreen> {
                                     ],
                                   ),
                                 ),
-                                // Rating Badge
                                 Container(
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 10,
                                     vertical: 6,
                                   ),
                                   decoration: BoxDecoration(
-                                    color: primaryPurple.withValues(
-                                      alpha: 0.15,
-                                    ),
+                                    color: Color(
+                                      0xFF8B7BFE,
+                                    ).withValues(alpha: 0.15),
                                     borderRadius: BorderRadius.circular(12),
                                   ),
                                   child: Row(
@@ -181,7 +164,7 @@ class _SharePlaylistScreenState extends State<SharePlaylistScreen> {
                                       Icon(
                                         Icons.star,
                                         size: 14,
-                                        color: primaryPurple,
+                                        color: Color(0xFF8B7BFE),
                                       ),
                                       const SizedBox(width: 4),
                                       Text(
@@ -189,7 +172,7 @@ class _SharePlaylistScreenState extends State<SharePlaylistScreen> {
                                         style: TextStyle(
                                           fontSize: 12,
                                           fontWeight: FontWeight.bold,
-                                          color: primaryPurple,
+                                          color: Color(0xFF8B7BFE),
                                         ),
                                       ),
                                     ],
@@ -200,7 +183,6 @@ class _SharePlaylistScreenState extends State<SharePlaylistScreen> {
 
                             const SizedBox(height: 24),
 
-                            // Playlist Items
                             _buildTrackItem(
                               "1",
                               "Mindfullness of Breath",
@@ -228,37 +210,32 @@ class _SharePlaylistScreenState extends State<SharePlaylistScreen> {
 
                 const SizedBox(height: 30),
 
-                // --- 4. Pagination Dots ---
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     _buildDot(false),
                     _buildDot(false),
                     _buildDot(false),
-                    _buildDot(true), // Active dot
+                    _buildDot(true),
                     _buildDot(false),
                   ],
                 ),
 
                 const SizedBox(height: 40),
 
-                // --- 5. Social Share Buttons ---
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    _buildSocialButton(Icons.chat_bubble, messageColor),
+                    _buildSocialButton(Icons.chat_bubble, Color(0xFF8B7BFE)),
                     const SizedBox(width: 16),
                     _buildSocialButton(
                       Icons.wechat_outlined,
-                      whatsappColor,
-                    ), // Approx for WhatsApp
+                      Color(0xFF25D366),
+                    ),
                     const SizedBox(width: 16),
-                    _buildSocialButton(Icons.facebook, facebookColor),
+                    _buildSocialButton(Icons.facebook, Color(0xFF1877F2)),
                     const SizedBox(width: 16),
-                    _buildSocialButton(
-                      Icons.flutter_dash,
-                      twitterColor,
-                    ), // Approx for Twitter/X
+                    _buildSocialButton(Icons.flutter_dash, Color(0xFF1DA1F2)),
                   ],
                 ),
 
@@ -271,7 +248,6 @@ class _SharePlaylistScreenState extends State<SharePlaylistScreen> {
     );
   }
 
-  // Helper Widget for Playlist Tracks
   Widget _buildTrackItem(String number, String title, String duration) {
     return Row(
       children: [
@@ -304,7 +280,6 @@ class _SharePlaylistScreenState extends State<SharePlaylistScreen> {
     );
   }
 
-  // Helper Widget for Pagination Dots
   Widget _buildDot(bool isActive) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 4),
@@ -317,7 +292,6 @@ class _SharePlaylistScreenState extends State<SharePlaylistScreen> {
     );
   }
 
-  // Helper Widget for Social Share Buttons
   Widget _buildSocialButton(IconData icon, Color color) {
     return Container(
       width: 55,

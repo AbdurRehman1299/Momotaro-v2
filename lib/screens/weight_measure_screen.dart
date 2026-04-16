@@ -2,13 +2,17 @@ import 'package:assignment1/screens/success_screen.dart';
 import 'package:flutter/material.dart';
 
 class WeightScreen extends StatefulWidget {
+  const WeightScreen({super.key});
+
   @override
-  _WeightScreenState createState() => _WeightScreenState();
+  State<WeightScreen> createState() => _WeightScreenState();
 }
 
 class _WeightScreenState extends State<WeightScreen> {
   bool isLbs = true;
-  final TextEditingController _weightController = TextEditingController(text: "120");
+  final TextEditingController _weightController = TextEditingController(
+    text: "120",
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -55,18 +59,20 @@ class _WeightScreenState extends State<WeightScreen> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => SuccessScreen()),
+                          MaterialPageRoute(
+                            builder: (context) => SuccessScreen(),
+                          ),
                         );
                       },
                       child: Text(
                         'Next',
                         style: TextStyle(
-                            color: Color(0xFF6A62B7),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16
+                          color: Color(0xFF6A62B7),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
 
@@ -77,19 +83,19 @@ class _WeightScreenState extends State<WeightScreen> {
                 Text(
                   'STEP 11/11',
                   style: TextStyle(
-                      color: Color(0xFF6A62B7),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                      letterSpacing: 1.5
+                    color: Color(0xFF6A62B7),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                    letterSpacing: 1.5,
                   ),
                 ),
                 SizedBox(height: 10),
                 Text(
                   'What is your weight?',
                   style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
                   ),
                 ),
 
@@ -109,11 +115,19 @@ class _WeightScreenState extends State<WeightScreen> {
                           child: Container(
                             margin: EdgeInsets.all(4),
                             decoration: BoxDecoration(
-                              color: isLbs ? Color(0xFF6A62B7) : Colors.transparent,
+                              color: isLbs
+                                  ? Color(0xFF6A62B7)
+                                  : Colors.transparent,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             alignment: Alignment.center,
-                            child: Text("lbs", style: TextStyle(color: isLbs ? Colors.white : Colors.grey, fontWeight: FontWeight.bold)),
+                            child: Text(
+                              "lbs",
+                              style: TextStyle(
+                                color: isLbs ? Colors.white : Colors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -123,11 +137,19 @@ class _WeightScreenState extends State<WeightScreen> {
                           child: Container(
                             margin: EdgeInsets.all(4),
                             decoration: BoxDecoration(
-                              color: !isLbs ? Color(0xFF6A62B7) : Colors.transparent,
+                              color: !isLbs
+                                  ? Color(0xFF6A62B7)
+                                  : Colors.transparent,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             alignment: Alignment.center,
-                            child: Text("kg", style: TextStyle(color: !isLbs ? Colors.white : Colors.grey, fontWeight: FontWeight.bold)),
+                            child: Text(
+                              "kg",
+                              style: TextStyle(
+                                color: !isLbs ? Colors.white : Colors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -146,7 +168,11 @@ class _WeightScreenState extends State<WeightScreen> {
                         controller: _weightController,
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold, color: Colors.black87),
+                        style: TextStyle(
+                          fontSize: 48,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                        ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.zero,
@@ -157,7 +183,11 @@ class _WeightScreenState extends State<WeightScreen> {
                     SizedBox(width: 8),
                     Text(
                       isLbs ? "lbs" : "kg",
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Colors.grey),
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey,
+                      ),
                     ),
                   ],
                 ),
@@ -178,13 +208,19 @@ class _WeightScreenState extends State<WeightScreen> {
                             width: 2,
                             height: isBigLine ? 30 : 15,
                             margin: EdgeInsets.symmetric(horizontal: 6),
-                            color: isBigLine ? Color(0xFF6A62B7) : Colors.grey[300],
+                            color: isBigLine
+                                ? Color(0xFF6A62B7)
+                                : Colors.grey[300],
                           );
                         }),
                       ),
                       Positioned(
                         top: 35,
-                        child: Icon(Icons.arrow_drop_up, size: 40, color: Color(0xFF6A62B7)),
+                        child: Icon(
+                          Icons.arrow_drop_up,
+                          size: 40,
+                          color: Color(0xFF6A62B7),
+                        ),
                       ),
                     ],
                   ),
@@ -198,16 +234,26 @@ class _WeightScreenState extends State<WeightScreen> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SuccessScreen()),
+                        MaterialPageRoute(
+                          builder: (context) => SuccessScreen(),
+                        ),
                       );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFF6A62B7),
                       foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
                       elevation: 0,
                     ),
-                    child: Text("Continue", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      "Continue",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(height: 20),

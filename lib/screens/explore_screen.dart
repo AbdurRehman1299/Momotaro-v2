@@ -11,16 +11,10 @@ class _ExploreScreenState extends State<ExploreScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F9FA), // Light background color
+      backgroundColor: const Color(0xFFF8F9FA),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios, color: Colors.black, size: 20),
-          onPressed: () {
-            // Navigator.pop(context); // Optional, depending on your nav stack
-          },
-        ),
         title: const Text(
           "Explore",
           style: TextStyle(
@@ -37,7 +31,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // --- Search Bar ---
               Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -67,9 +60,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   ),
                 ),
               ),
+
               const SizedBox(height: 24),
 
-              // --- Featured Horizontal List ---
               SizedBox(
                 height: 240,
                 child: ListView(
@@ -90,9 +83,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   ],
                 ),
               ),
+
               const SizedBox(height: 30),
 
-              // --- Topics For You ---
               _buildSectionHeader("Topics For You"),
               const SizedBox(height: 16),
               SizedBox(
@@ -110,9 +103,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   ],
                 ),
               ),
+
               const SizedBox(height: 30),
 
-              // --- Get Inspired (Vertical List) ---
               _buildSectionHeader("Get Inspired"),
               const SizedBox(height: 16),
               _buildInspiredItem(
@@ -133,9 +126,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
                 title: "10 Ways to Stay Motivated at Gym",
                 category: "Nutrition",
               ),
+
               const SizedBox(height: 30),
 
-              // --- Collection ---
               const Text(
                 "Collection",
                 style: TextStyle(
@@ -166,9 +159,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 100,
-              ), // Extra padding for the external bottom bar
+              const SizedBox(height: 100),
             ],
           ),
         ),
@@ -176,7 +167,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
     );
   }
 
-  // Helper Widget: Section Header
   Widget _buildSectionHeader(String title) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -194,7 +184,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
     );
   }
 
-  // Helper Widget: Featured Card
   Widget _buildFeaturedCard({
     required String imageUrl,
     required String title,
@@ -271,7 +260,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
     );
   }
 
-  // Helper Widget: Topic Item
   Widget _buildTopicItem(String emoji, String title) {
     return Column(
       children: [
@@ -302,7 +290,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
     );
   }
 
-  // Helper Widget: Get Inspired Item
   Widget _buildInspiredItem({
     required Color color,
     required String icon,
@@ -350,7 +337,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
     );
   }
 
-  // Helper Widget: Collection Card
   Widget _buildCollectionCard({
     required Color color,
     required String tag,

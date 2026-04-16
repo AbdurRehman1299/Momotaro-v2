@@ -8,7 +8,6 @@ class PremiumScreen extends StatefulWidget {
 }
 
 class _PremiumScreenState extends State<PremiumScreen> {
-  // State to track selected plan
   int selectedPlanIndex = 0;
 
   @override
@@ -21,7 +20,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
     return Container(
       height: screenHeight * 0.90,
       decoration: const BoxDecoration(
-        color: Colors.white, // White background for premium content
+        color: Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
       ),
       child: ClipRRect(
@@ -30,7 +29,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // 1. Top Bar & Illustration Section
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 20.0,
@@ -49,11 +47,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     ),
                     const Row(
                       children: [
-                        Icon(
-                          Icons.star,
-                          size: 24,
-                          color: Color(0xFFC0CAFB),
-                        ), // Placeholder for stylized stars
+                        Icon(Icons.star, size: 24, color: Color(0xFFC0CAFB)),
                         SizedBox(width: 5),
                         Icon(
                           Icons.star,
@@ -66,21 +60,17 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 ),
               ),
 
-              // Placeholder for premium illustration
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Image.asset(
-                  'images/premium_illustration.png', // Add this asset
+                  'images/premium_illustration.png',
                   height: 180,
                   fit: BoxFit.contain,
-                  errorBuilder: (context, error, stackTrace) => Container(
-                    height: 180,
-                    color: Colors.grey[100],
-                  ), // Fallback
+                  errorBuilder: (context, error, stackTrace) =>
+                      Container(height: 180, color: Colors.grey[100]),
                 ),
               ),
 
-              // 2. Text Content
               const Text(
                 "Go premium",
                 style: TextStyle(
@@ -105,7 +95,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 style: TextStyle(fontSize: 14, color: Colors.grey, height: 1.5),
               ),
 
-              // 3. Pagination Dots
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Row(
@@ -114,18 +103,16 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     _buildDot(context, false),
                     _buildDot(context, false),
                     _buildDot(context, false),
-                    _buildDot(context, true), // Active dot
+                    _buildDot(context, true),
                     _buildDot(context, false),
                   ],
                 ),
               ),
 
-              // 4. Subscription Cards
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: Column(
                   children: [
-                    // Premium Card with Badge
                     GestureDetector(
                       onTap: () => setState(() => selectedPlanIndex = 0),
                       child: Stack(
@@ -183,7 +170,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
                               ],
                             ),
                           ),
-                          // "SAVE 30%" Badge
                           Positioned(
                             top: -10,
                             right: -10,
@@ -209,8 +195,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
                         ],
                       ),
                     ),
+
                     const SizedBox(height: 16),
-                    // Monthly Card
+
                     GestureDetector(
                       onTap: () => setState(() => selectedPlanIndex = 1),
                       child: Container(
@@ -270,7 +257,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 ),
               ),
 
-              // "Go Premium" Button
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 24.0,
@@ -280,7 +266,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   width: double.infinity,
                   height: 55,
                   child: ElevatedButton(
-                    onPressed: () {}, // Subscriprion logic
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFF7C6AFB),
                       foregroundColor: Colors.white,
@@ -292,11 +278,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(
-                          Icons.star,
-                          size: 20,
-                          color: Colors.white,
-                        ), // Stylized star icon placeholder
+                        Icon(Icons.star, size: 20, color: Colors.white),
                         SizedBox(width: 8),
                         Text(
                           "Go Premium",
@@ -311,7 +293,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 ),
               ),
 
-              // Footer Text
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.0),
                 child: Column(

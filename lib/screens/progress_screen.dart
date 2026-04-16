@@ -1,3 +1,4 @@
+import 'package:assignment1/screens/weight_reminder_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProgressScreen extends StatelessWidget {
@@ -12,7 +13,9 @@ class ProgressScreen extends StatelessWidget {
         padding: const EdgeInsets.all(24.0),
         child: SafeArea(
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              WeightReminderBottomSheet.showWeightReminder(context);
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: Color(0xFF7B61FF),
               minimumSize: const Size(double.infinity, 56),

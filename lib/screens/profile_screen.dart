@@ -1,3 +1,4 @@
+import 'package:assignment1/screens/progress_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -78,12 +79,22 @@ class ProfileScreen extends StatelessWidget {
                             color: Color(0xFFE8E5FF),
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          child: const Text(
-                            "Edit",
-                            style: TextStyle(
-                              color: Color(0xFF8B7BFE),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 13,
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => ProgressScreen(),
+                                ),
+                              );
+                            },
+                            child: const Text(
+                              "Edit",
+                              style: TextStyle(
+                                color: Color(0xFF8B7BFE),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 13,
+                              ),
                             ),
                           ),
                         ),
